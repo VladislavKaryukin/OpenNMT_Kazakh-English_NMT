@@ -1,6 +1,6 @@
 # OpenNMT_Kazakh-English_NMT
 
-The OpenNMT framework for training parallel Kazakh – English parallel corpora.
+The OpenNMT framework for training parallel Kazakh – English parallel corpora. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7118550.svg)](https://doi.org/10.5281/zenodo.7118550)
 
 The kk_en_corpora folder contains files with train, valid, test, and predicted texts for the word tokenization and BPE models.
 
