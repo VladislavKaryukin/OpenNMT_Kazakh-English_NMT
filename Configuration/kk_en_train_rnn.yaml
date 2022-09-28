@@ -1,0 +1,28 @@
+src_vocab: kk_en_corpora/rnn_bpe_model/kk_en_bpe.vocab.src
+tgt_vocab: kk_en_corpora/rnn_bpe_model/kk_en_bpe.vocab.tgt
+
+transforms: onmt_tokenize
+encoder_type: rnn
+decoder_type: rnn
+rnn_type: LSTM
+early_stopping: 4
+early_stopping_criteria: accuracy
+early_stopping_criteria: ppl
+
+data:
+    corpus_1:
+        path_src: kk_en_corpora//src_train_bpe_shuffled
+        path_tgt: kk_en_corpora//tgt_train_bpe_shuffled
+    valid:
+        path_src: kk_en_corpora//src_valid_bpe_shuffled
+        path_tgt: kk_en_corpora//tgt_valid_bpe_shuffled
+        
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: kk_en_corpora/rnn_bpe_model/model
+save_checkpoint_steps: 10000
+train_steps: 60000
+valid_steps: 10000

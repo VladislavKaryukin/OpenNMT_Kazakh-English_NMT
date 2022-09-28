@@ -1,0 +1,17 @@
+# kk_en.yaml
+save_data: kk_en_corpora/rnn_bpe_model/kk_en_bpe
+## Where the vocab(s) will be written
+src_vocab: kk_en_corpora/rnn_bpe_model/kk_en_bpe.vocab.src
+tgt_vocab: kk_en_corpora/rnn_bpe_model/kk_en_bpe.vocab.tgt
+src_subword_type: bpe
+tgt_subword_type: bpe
+# Prevent overwriting existing files in the folder
+overwrite: False
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: kk_en_corpora//src_train_bpe_shuffled
+        path_tgt: kk_en_corpora//tgt_train_bpe_shuffled
+    valid:
+        path_src: kk_en_corpora//src_valid_bpe_shuffled
+        path_tgt: kk_en_corpora//tgt_valid_bpe_shuffled

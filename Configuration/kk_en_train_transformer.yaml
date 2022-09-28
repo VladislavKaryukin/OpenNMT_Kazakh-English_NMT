@@ -1,0 +1,55 @@
+src_vocab: kk_en_corpora/transformer_tokenized_model/kk_en.vocab.src
+tgt_vocab: kk_en_corpora/transformer_tokenized_model/kk_en.vocab.tgt
+
+#Transformer model
+encoder_type: transformer
+decoder_type: transformer
+position_encoding: true
+enc_layers: 6
+dec_layers: 6
+heads: 8
+rnn_size: 512
+word_vec_size: 512
+transformer_ff: 2048
+dropout_steps: [0]
+dropout: [0.1]
+attention_dropout: [0.1]
+
+# Optimization
+model_dtype: "fp32"
+optim: "adam"
+learning_rate: 2
+decay_method: "noam"
+adam_beta2: 0.998
+max_grad_norm: 0
+label_smoothing: 0.1
+param_init: 0
+param_init_glorot: true
+normalization: "tokens"
+
+#Batch size
+batch_size: 2048
+batch_type: tokens
+normalization: tokens
+
+early_stopping: 4
+early_stopping_criteria: accuracy
+early_stopping_criteria: ppl
+
+data:
+    corpus_1:
+        path_src: kk_en_corpora//src_train_shuffled.txt
+        path_tgt: kk_en_corpora//tgt_train_shuffled.txt
+    valid:
+        path_src: kk_en_corpora//src_valid_shuffled.txt
+        path_tgt: kk_en_corpora//tgt_valid_shuffled.txt
+        
+# Train on a single GPU
+world_size: 2
+gpu_ranks: [0,1]
+
+# Where to save the checkpoints
+save_model: kk_en_corpora/transformer_tokenized_model/model
+save_checkpoint_steps: 10000
+train_steps: 100000
+valid_steps: 5000
