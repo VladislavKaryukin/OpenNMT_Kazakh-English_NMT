@@ -4,7 +4,7 @@ The OpenNMT framework for training parallel Kazakh – English parallel corpora.
 
 The kk_en_corpora folder contains files with train, valid, test, and predicted texts for the word tokenization and BPE models.
 
-The configuration folder includes yaml files for RNN, BRNN, and Transformer NMT models.
+The Configuration folder includes yaml files for RNN, BRNN, and Transformer NMT models.
 
 The quality of the trained model is evaluated with the BLEU, WER, and TER metrics given in the Translation results folder.
 
